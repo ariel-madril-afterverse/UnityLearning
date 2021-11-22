@@ -32,7 +32,7 @@ public class Lerp : MonoBehaviour
         Vector3 originalPos = _vector1.transform.position;
 
         int textTutorialCounter = 0;
-        /*while (v2v1.magnitude > 0.01f)
+        while (v2v1.magnitude > 0.01f)
         {
             if (textTutorialCounter < 3)
             {
@@ -55,7 +55,7 @@ public class Lerp : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
-        _vector1.transform.position = originalPos;*/
+        _vector1.transform.position = originalPos;
 
         v2v1 = _vector2.transform.position - _vector1.transform.position;
         _vector1Text.text = "Agora rápido!";

@@ -23,8 +23,7 @@ public class DotProduct : MonoBehaviour
         float resultDot = Vector3.Dot(_vector1.transform.position, _vector2.transform.position);
 
         Vector3 projectionLength = _vector2.transform.position * resultDot;
-
-
+        
         if (resultDot < 0)
         {
             Gizmos.color = Color.black;
@@ -51,29 +50,33 @@ public class DotProduct : MonoBehaviour
         
         _resultCanvas.transform.position = new Vector3(projectionLength.x, projectionLength.y + 0.1f, projectionLength.z);
 
+        //angulo entre 0-1, 0 = 180 graus, 1 = 0 graus
+        float angleRatio = (Mathf.Acos(resultDot) / Mathf.PI);
         if (_resultInAngles)
         {
-            float remappedDot = (1 + resultDot) / 2;
 
             if (_useFull360)
             {
                 if (_crossProduct._resultCrossProduct.y > 0)
                 {
-                    _resultText.text = "Result: " + (180 - (180 * remappedDot));
+                    //primeira metade, 0 graus quando alinhado perfeitamente entre os vetores, 180 quando oposto
+                    _resultText.text = "Result: " + (180 * angleRatio);
                 }
                 else
                 {
-                    _resultText.text = "Result: " + (180 + (180 * remappedDot));
+                    //adicionando 180 para contar os 180 que já passaram, e fazendo o caminho inverso de 0 a 180 para
+                    //somar os angulos excedentes
+                    _resultText.text = "Result: " + (180 + (180 - 180*angleRatio));
                 }
             }
             else
             {
-                _resultText.text = "Result: " + (180 - (180 * remappedDot));
+                _resultText.text = "Result: " + (180 * angleRatio);
             }
         }
         else
         {
-            _resultText.text = "Result: " + resultDot;
+            _resultText.text = "Result: " + angleRatio;
         }
     }
 }

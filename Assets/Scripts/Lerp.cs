@@ -15,6 +15,8 @@ public class Lerp : MonoBehaviour
 
     [SerializeField] private bool _doLerp;
 
+    [SerializeField] private AnimationCurve _animCurve;
+
     private Coroutine lerpRoutine;
     private void Update()
     {
@@ -32,7 +34,9 @@ public class Lerp : MonoBehaviour
         Vector3 originalPos = _vector1.transform.position;
 
         int textTutorialCounter = 0;
-        while (v2v1.magnitude > 0.01f)
+
+        float progress = 0;
+        while (progress < 0)
         {
             if (textTutorialCounter < 3)
             {
@@ -42,8 +46,9 @@ public class Lerp : MonoBehaviour
                 _vector1Text.text = "Passo2: Transladar pra lá";
                 yield return new WaitForSeconds(1f);
             }
-            _vector1.transform.position = Vector3.Lerp(_vector1.transform.position, _vector2.transform.position, _amount);
-
+            
+            _vector1.transform.position = Vector3.Lerp(originalPos, _vector2.transform.position, _animCurve.Evaluate(progress));
+            progress += 0.01f;
             if (textTutorialCounter < 3)
             {
                 _vector1Text.text = "Passo3: Repetir";

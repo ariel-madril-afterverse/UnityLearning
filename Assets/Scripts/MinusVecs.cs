@@ -15,5 +15,9 @@ public class MinusVecs : MonoBehaviour
         Vector3 minusVec = _vector2.transform.position - _vector1.transform.position;
         Gizmos.color = Color.red;
         Gizmos.DrawLine(Vector3.zero , minusVec);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(Vector3.zero , _vector1.transform.forward);
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(Vector3.zero , _vector1.transform.position);
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CarPanel : ButtonsPanel
 {
+    [SerializeField] private AudioSource _audioSource;
+  
     public override void OnBlueButtonCLick()
     {
         base.OnBlueButtonCLick();
@@ -14,6 +16,8 @@ public class CarPanel : ButtonsPanel
     public override void OnRedButtonClick()
     {
         base.OnRedButtonClick();
+        
+        _audioSource.Play();
         
         Debug.Log("Buzinou!");
 

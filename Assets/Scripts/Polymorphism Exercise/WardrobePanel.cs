@@ -11,28 +11,26 @@ public class WardrobePanel : ButtonsPanel
     [SerializeField] private Animation _rightSideDoorAnimation;
     [SerializeField] private AnimationClip _rightDoorOpen;
     [SerializeField] private AnimationClip _rightDoorClose;
-    
-    public void OnDoorLeftClick(bool isOpen)
+
+    public override void OnRedButtonClick()
     {
-        if(isOpen)
-        {
-            base.OnRedButtonClick();
+        base.OnRedButtonClick();
+        
+        _leftSideDoorAnimation.clip = _leftDoorClose;
+        _leftSideDoorAnimation.Play();
 
-            _leftSideDoorAnimation.clip = _leftDoorClose;
-            _leftSideDoorAnimation.Play();
+        _rightSideDoorAnimation.clip = _rightDoorClose;
+        _rightSideDoorAnimation.Play();
+    }
 
-            _rightSideDoorAnimation.clip = _rightDoorClose;
-            _rightSideDoorAnimation.Play();
-        }
-        else
-        {
-           base.OnBlueButtonCLick();
-
-           _leftSideDoorAnimation.clip = _leftDoorOpen;
-           _leftSideDoorAnimation.Play();
+    public override void OnBlueButtonCLick()
+    {
+        base.OnBlueButtonCLick();
+        
+        _leftSideDoorAnimation.clip = _leftDoorOpen;
+        _leftSideDoorAnimation.Play();
            
-           _rightSideDoorAnimation.clip = _rightDoorOpen;
-           _rightSideDoorAnimation.Play();
-        }
+        _rightSideDoorAnimation.clip = _rightDoorOpen;
+        _rightSideDoorAnimation.Play();
     }
 }

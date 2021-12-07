@@ -478,19 +478,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1878830268893326664}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1878830269263370793}
-        m_TargetAssemblyTypeName: ButtonsPanel, Assembly-CSharp
-        m_MethodName: OnBlueButtonCLick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1878830269163021526
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,19 +599,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1878830269163021513}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1878830269263370793}
-        m_TargetAssemblyTypeName: ButtonsPanel, Assembly-CSharp
-        m_MethodName: OnRedButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1878830269188056552
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +681,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1878830269263370792}
-  - component: {fileID: 1878830269263370793}
   m_Layer: 0
   m_Name: ButtonsPanel
   m_TagString: Untagged
@@ -735,21 +710,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1878830269263370793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878830269263370807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55528ad2ea97047858a2fab1125a769e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _panelRenderer: {fileID: 1878830269639730854}
-  _blueLight: {fileID: 1878830269188056553}
-  _redLight: {fileID: 1878830268583468705}
 --- !u!1001 &8902490983392257799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -847,17 +807,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 638175e5958534035b410f8b7a42331a, type: 3}
---- !u!114 &1878830269639730854 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7034326081433108897, guid: 638175e5958534035b410f8b7a42331a, type: 3}
-  m_PrefabInstance: {fileID: 8902490983392257799}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1878830269639730853 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7034326081433108898, guid: 638175e5958534035b410f8b7a42331a, type: 3}
